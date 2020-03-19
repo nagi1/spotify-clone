@@ -1,0 +1,24 @@
+@tailwind base;
+
+@tailwind components;
+
+.debug {
+	@apply border-4 border-red-600;
+}
+
+.debug-blue {
+	@apply border-4 border-blue-600;
+}
+
+
+.debug-green {
+	@apply border-4 border-green;
+}
+
+
+.background {
+	background: rgb(64, 64, 64);
+	background: linear-gradient(180deg, rgba(64, 64, 64, 1) 0%, rgba(18, 18, 18, 1) 38%);
+}
+
+@tailwind utilities;

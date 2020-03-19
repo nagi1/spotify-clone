@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<link rel="stylesheet" href="./build/styles.css" />
+	</head>
+	<body>
+		<!-- App -->
+		<div id="app" class="background h-screen">
+			<!-- Inner app wrapper -->
+			<div class="flex " style="height:86vh;">
+				<!-- Sidebar -->
+				<div class="w-56 bg-black h-full flex-none">
+
+					<!-- logo -->
+					<div class="p-6">
+						<img class="h-10" src="./img/logo.png" alt="Logo" style="filter: brightness(0) invert(1);" />
+					</div>
+
+
+					<!-- buttons -->
+					<div class="mx-2">
+						<button class="focus:outline-none  px-3 py-2 w-full rounded bg-light flex justify-start items-center text-sm font-semibold text-white">
+							<i class="material-icons">home</i>
+							<p class="ml-3">Home</p>
+						</button>
+
+						<button class="focus:outline-none  px-3 py-2 w-full rounded opacity-50 hover:opacity-100 flex justify-start items-center text-sm font-semibold text-white">
+							<i class="material-icons">search</i>
+							<p class="ml-3">Search</p>
+						</button>
+
+						<button class="focus:outline-none  px-3 py-2 w-full rounded opacity-50 hover:opacity-100 flex justify-start items-center text-sm font-semibold text-white">
+							<i class="material-icons">library_music</i>
+							<a href="./album.html" class="ml-3">Library</a>
+						</button>
+
+					</div>
+
+
+					<!-- PlayLists -->
+					<div class="mx-5 mt-5 border-b border-light pb-2">
+						<h3 class="uppercase text-lightest text-xs tracking-widest">Playlists</h3>
+
+						<button class="focus:outline-none  mt-3 flex justify-start items-center opacity-50 hover:opacity-100">
+							<svg class="w-8 h-8 fill-current text-dark bg-white" shape-rendering="crispEdges" viewBox="0 0 36 36"><path d="m28 20h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z"></path></svg>
+							<p class="ml-3 text-sm text-white font-semibold">Create Playlist</p>
+						</button>
+
+						<button class="focus:outline-none  mt-3 flex justify-start items-center opacity-50 hover:opacity-100">
+							<img class="h-8 w-8" src="./img/likedsongs.png" />
+							<a href="./album.html" class="ml-3 text-sm text-white font-semibold">Liked Songs</a>
+						</button>
+					</div>
+					<!-- /playlists -->
+
+					<!-- playlist scroll -->
+					<div class="ml-5 mr-1 mt-5">
+						<div class="overflow-y-auto w-full h-40">
+							<p  class="font-semibold mb-3 truncate text-xs text-white opacity-75 hover:opacity-100">Wish you were here</p>
+							<p  class="font-semibold mb-3 truncate text-xs text-white opacity-75 hover:opacity-100">Mood</p>
+							<p  class="font-semibold mb-3 truncate text-xs text-white opacity-75 hover:opacity-100">Home alone</p>
+							<p  class="font-semibold mb-3 truncate text-xs text-white opacity-75 hover:opacity-100">Car</p>
+							<p  class="font-semibold mb-3 truncate text-xs text-white opacity-75 hover:opacity-100">I hate this</p>
+							<p  class="font-semibold mb-3 truncate text-xs text-white opacity-75 hover:opacity-100">Random songs</p>
+							<p  class="font-semibold mb-3 truncate text-xs text-white opacity-75 hover:opacity-100">Girls night</p>
+							<p  class="font-semibold mb-3 truncate text-xs text-white opacity-75 hover:opacity-100">Just before winking</p>
+						</div>
+
+						<button class="focus:outline-none  flex justify-start items-center text-white mt-2 opacity-75 hover:opacity-100">
+							<i class="material-icons text-sm rounded-full border border-lightest">arrow_downward</i>
+							<p class="ml-3 font-semibold text-sm">Install App</p>
+						</button>
+					</div>
+					<!-- /playlist scroll -->
+					
+				</div>
+				<!-- /Sidebar -->
+
+				<!-- Main content -->
+				<div  class="w-full h-full relative overflow-y-scroll">
+					<!-- header -->
+					<div  class="px-6 py-4 w-full bg-dark z-20 sticky top-0 flex items-center justify-between">
+						
+						<!-- arrows -->
+						<div class="flex items-center pr-10">
+							<button class="text-white focus:outline-none  rounded-full w-8 h-8 bg-black">
+								<i class="material-icons text-3xl">keyboard_arrow_left</i>
+							</button>
+
+							<button class="text-white ml-4 focus:outline-none  opacity-50 hover:opacity-100 rounded-full w-8 h-8 bg-black">
+								<i class="material-icons text-3xl">keyboard_arrow_right</i>
+							</button>
+						</div>
+
+
+						<div class="flex items-center justify-between">
+
+							<!-- upgrade button -->
+							<button class="text-white focus:outline-none text-sm font-semibold tracking-tight bg-transparent uppercase border-2 border-white rounded-full text-center px-8 py-2">Upgrade</button>
+
+							<button class="ml-12 p-1 focus:outline-none hidden sm:flex hover:bg-lightest bg-light rounded-full text-white flex items-center">
+								<img class="w-6 h-6 rounded-full" src="./img/face.jpg" />
+								<span class="ml-3 text-xs text-white font-bold tracking-wide">Ahmed Nagi</span>
+								<i class="material-icons text-white ml-3 text-2xl">arrow_drop_down</i>
+							</button>
+
+						</div>
+
+					</div>
+					<!-- /header -->
+
+				
+					<!-- inner content -->
+					<div  style="min-width: 25rem;" class="mt-2 px-8 flex flex-col w-full h-full">
+						
+						<!-- section -->
+						<div  class="flex flex-col w-full ">
+
+							<!-- header -->
+							<div class="flex w-full justify-between items-baseline">
+								<h1 class="text-white text-white font-extrabold text-2xl leading-loose tracking-wide">Recently played</h1>
+
+							</div>
+
+							<!-- cards row -->
+							<div class="flex flex-wrap mt-5 h-auto w-full">
+								
+								<!-- card -->
+								<div  style="flex:0 0 13rem; height: 18.5rem; width: 13rem; " class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<a href="./album.html" class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</a>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover4.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+								
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;"class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover1.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Someone you love</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+
+								
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover2.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Hassly on move</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+								
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover3.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+								
+		
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover6.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+
+
+
+
+
+							</div>
+							<!-- /cards row -->
+
+						</div>
+						<!-- /section -->
+
+
+						<!-- section -->
+						<div class="flex flex-col w-full mt-10">
+
+							<!-- header -->
+							<div class="flex w-full justify-between items-baseline">
+								<h1 class="text-white font-extrabold text-2xl leading-loose tracking-wide hover:underline">Your heavy rotation</h1>
+
+								<a class="text-white hover:underline uppercase text-gray-400 text-sm font-semibold" href="#">See all</a>
+							</div>
+
+							<!-- cards row -->
+							<div class="flex flex-wrap mt-5 h-auto w-full">
+								
+								
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover7.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover9.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover10.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover11.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover15.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+							</div>
+							<!-- /cards row -->
+
+						</div>
+						<!-- /section -->
+
+
+						<!-- section -->
+						<div class="flex flex-col w-full mt-10">
+
+							<!-- header -->
+							<div class="flex w-full justify-between items-baseline">
+								<h1 class="text-white text-white font-extrabold text-2xl leading-loose tracking-wide">Recently played</h1>
+
+							</div>
+
+							<!-- cards row -->
+							<div class="flex flex-wrap mt-5 h-auto w-full">
+								
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover4.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+								
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;"class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover1.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Someone you love</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+
+								
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover2.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Hassly on move</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+								
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover3.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+								
+		
+								<!-- card -->
+								<div style="height: 18.5rem; width: 13rem;" class="relative  p-2 ">
+
+
+									<!-- hover -->
+									<div class="absolute p-8 opacity-0 hover:opacity-100 w-full h-full flex justify-end items-end">
+										<div class="flex justify-center items-center bg-green h-10 w-10 rounded-full shadow-xl">
+											<i class="material-icons text-white text-2xl">play_arrow</i>
+										</div>
+									</div>
+
+									<div class="bg-light w-full h-full p-5 rounded-lg shadow-md ">
+
+									<div class="w-full h-40 ">
+										<img class="shadow object-cover h-full w-full" src="./img/cover6.jpg">
+									</div>
+									
+									
+									<h4 class="truncate font-semibold text-sm mt-2 text-white">Cover Song</h4>
+
+									<p class="mt-1 text-left text-gray-300 text-xs  ">Listen to the full album and feel happy again like a child.</p>
+
+
+									</div>
+								</div>
+								<!-- /card -->
+
+
+
+
+
+
+
+							</div>
+							<!-- /cards row -->
+
+						</div>
+						<!-- /section -->
+
+						
+
+
+					</div>
+					<!-- /inner content -->
+
+
+				</div>
+				<!-- /Main content -->
+			</div>
+			<!-- /Inner app wrapper -->
+
+			<!-- Playbar audio player -->
+			<div class="w-full bg-light fixed" style="height:14vh;">
+				
+				<!-- inner -->
+				<div class="flex p-5 justify-between items-center">
+
+					<!-- Running album info -->
+						<div class="flex justify-between items-center flex-none pr-4">
+							
+							<!-- img -->
+							<div class="w-16 h-16">
+								<img src="./img/cover13.jpg" class="w-full h-full">
+							</div>
+
+							<!-- info -->
+							<div class="ml-5">
+								<h5 class="text-sm leading-3 text-white">
+									Lonely (with Jonas Brothers)
+								</h5>
+								<a class="text-xs font-semibold  text-white opacity-50 hover:opacity-100" href="#">Diplo,</a>
+								<a class="text-xs font-semibold  text-white opacity-50 hover:opacity-100" href="#"> Jonas Brothers</a>
+							</div>
+
+							<div class="ml-3">
+								<i class="material-icons text-lg text-white opacity-50 hover:opacity-100 cursor-pointer">favorite_border</i>
+							</div>
+
+						</div>
+					<!-- /Running album info -->
+
+
+					<!-- play section -->
+						<div style="flex: 1 0 27rem; " class="flex flex-col w-full ">
+
+							<!-- play controls -->
+								<div class="flex items-center justify-center">
+
+									<button class="px-2 focus:outline-none"><i class="material-icons text-white opacity-50 hover:opacity-100 text-xl">shuffle</i></button>
+
+									<button class="px-2 focus:outline-none"><i class="material-icons text-white opacity-50 hover:opacity-100 text-xl">skip_previous</i></button>
+
+									<button class="px-2 focus:outline-none"><i class="material-icons text-white opacity-50 hover:opacity-100  text-3xl">play_circle_outline</i></button>
+
+
+									<button class="px-2 focus:outline-none"><i class="material-icons text-white opacity-50 hover:opacity-100 text-xl">skip_next</i></button>
+
+
+									<button class="px-2 focus:outline-none"><i class="material-icons text-white opacity-50 hover:opacity-100 text-xl">repeat</i></button>
+
+								</div>
+							<!-- /play controls -->
+
+							<!-- play bar -->
+								<div class="flex justify-center items-center">
+									<span class="px-2 text-white">0:18</span>
+									<div style="flex: 1 1 25rem;" class="w-3/4 h-1 bg-gray-400 rounded flex items-center group">
+										<div style="width: 50%;" class="h-1 bg-green rounded group-hover:opacity-100 opacity-0"></div>
+										<div class="w-3 h-3 rounded-full bg-white -m-1 group-hover:opacity-100 opacity-0"></div>
+									</div>
+									<span class="px-2 text-white">3:18</span>
+								</div>
+							<!-- /play bar -->
+
+						</div>
+					<!-- /pay section -->
+
+
+					<!-- audio control -->
+						<div class="flex justify-between items-center pl-5">
+							<i class="material-icons text-white opacity-50 hover:opacity-100 text-2xl mx-2">playlist_play</i>
+							<i class="material-icons text-white opacity-50 hover:opacity-100 text-lg mx-2">important_devices</i>
+							<i class="material-icons text-white opacity-50 hover:opacity-100 text-lg mx-2">volume_up</i>
+							<div class="w-24 h-1 bg-gray-400 rounded flex items-center group">
+								<div style="width: 50%;" class="h-1 bg-green rounded group-hover:opacity-100 opacity-0"></div>
+								<div class="w-3 h-3 rounded-full bg-white -m-1 group-hover:opacity-100 opacity-0"></div>
+							</div>
+
+						</div>
+					<!-- /audio control -->
+				</div>
+				<!-- /inner -->
+			</div>
+			<!-- /Playbar audio player -->
+		</div>
+		<!-- /App -->
+
+
+	</body>
+</html>

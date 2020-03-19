@@ -1,0 +1,21 @@
+{
+	"name": "spotify",
+	"version": "1.0.0",
+	"description": "Spotify clone",
+	"main": "public/index.html",
+	"author": "Ahmed Nagi",
+	"license": "MIT",
+	"scripts": {
+		"build": "postcss css/tailwind.css -o public/build/styles.css",
+		"watch": "postcss css/tailwind.css -o public/build/styles.css --watch",
+		"production": "yarn run build --env=production"
+	},
+	"dependencies": {
+		"@fullhuman/postcss-purgecss": "^2.1.0",
+		"autoprefixer": "^9.7.4",
+		"cssnano": "^4.1.10",
+		"postcss-cli": "^7.1.0",
+		"stylelint-config-recommended": "^3.0.0",
+		"tailwindcss": "^1.2.0"
+	}
+}
